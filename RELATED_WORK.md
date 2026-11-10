@@ -52,3 +52,13 @@ identifier and the mathematical description were checked on 10 November 2026.
 No accepted competing full result was identified by those checks. This statement
 is limited to the searches performed; no exhaustive claim about private work,
 all publications, deleted repositories, or unindexed sources is possible.
+
+The community database at `teorth/erdosproblems`, commit
+`cda7dd1dbe089794eb1e9f4171edfc00ea0e5a90`, `data/problems.yaml`, lines
+19361–19376, records both the informal and general status of problem 1173 as
+`open`; its solution formalization status is `unformalized`. This was checked
+again immediately before submission. The separate `formalized: yes` field
+records availability of a formal statement, not a verified solution.
+The matching JSP-000978 catalog entry also remains Open at awards commit
+`f8801a856529dce27e738c6b305e46d76e7c387c`. These catalog statuses motivate
+submission for review and are not evidence that no prior solution exists.

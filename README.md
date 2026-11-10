@@ -1,6 +1,6 @@
 # A set mapping with small intersections and no large free set
 
-**Private preparation copy. Publication has not been authorized.**
+Complete mathematical proof and formalization submitted for review.
 
 Will Howe, Grant Huffman, Jensen Kohlmeyer, and Liam Kruer, in alphabetical surname order.
 
@@ -33,14 +33,19 @@ All five audited targets depend only on `propext`, `Classical.choice`, and
 ## Status
 
 The original proof sources were checked at private commit `e8c481bba7f41f0fa5b846e78807b3bf6db881ff`.
-The proof, bridge, toolchain, build file and lockfile here are byte-for-byte
-identical. No third-party private material or private development history is
-included in this preparation repository.
+The proof, bridge, toolchain, build file and lockfile have identical Git blobs
+to that checked source. The manuscript and supporting review documents were
+prepared for this release. The earlier preparation commits are retained without
+backdating the public release or claiming public priority from their dates.
 
 This is a complete proof submission candidate, not an accepted prize record.
 No firstness claim, organizer verification, independent human referee report,
 arXiv acceptance, or prize award is asserted. The 2015 paper identified in
 `RELATED_WORK.md` remains unread in full; its possible overlap is unresolved.
 
-The planned public destination, only after explicit authorization, is
-`https://github.com/Ghuffy1/erdos-1173`. That repository has not been created by this preparation.
+The original public release repository is
+`https://github.com/Ghuffy1/erdos-1173`. Grant Huffman (`Ghuffy1`) is the submitting
+and corresponding author. Joint authorship and AI contributions are disclosed
+in `AUTHORS.md`. Publication was authorized on 10 November 2026 after confirming
+that Erdős 1173 remained listed as open in the community database and the
+matching JSP catalog entry. An open listing does not establish novelty.

@@ -1,0 +1,15 @@
+{
+  "checked_commit": "82fe055ec3e396a22fbfe4d00dad47cadd1e452f",
+  "completed_utc": "2026-11-10T06:40:18.125058+00:00",
+  "builds": [
+    {"command": "lake build", "exit_code": 0, "completed_jobs": 965},
+    {"command": "lake -v --no-cache build", "exit_code": 0, "completed_jobs": 965}
+  ],
+  "statement_and_axioms": {"command": "lake env lean StatementAudit.lean", "exit_code": 0, "seconds": 15.046},
+  "kernel_replay": {"command": "lake env leanchecker --verbose Erdos1173 StatementAudit", "exit_code": 0, "seconds": 98.0},
+  "package_checks_passed": 107,
+  "prior_fresh_replay": "The identical original proof and bridge at e8c481bba7f41f0fa5b846e78807b3bf6db881ff passed Windows and isolated Linux fresh replay.",
+  "release_change_scope": "Documentation and license notices only; the proof, bridge, toolchain, Lake file and dependency lockfile retain identical Git blobs.",
+  "independent_human_or_organizer_verification": false,
+  "historical_priority_certified": false
+}

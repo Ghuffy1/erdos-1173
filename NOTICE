@@ -1,0 +1,12 @@
+This work includes a definition derived from the Formal Conjectures project.
+
+Copyright 2026 The Formal Conjectures Authors.
+
+The Cardinal.GCH definition in Erdos1173.lean is derived from
+FormalConjecturesForMathlib/SetTheory/Cardinal/ContinuumHypothesis.lean,
+commit 3afb9beda5bcb9933e6e10276e87f8ccfd851222, in
+https://github.com/google-deepmind/formal-conjectures.
+It is presented with an explicit universe-zero specialization in this proof.
+The upstream work is licensed under the Apache License, Version 2.0;
+see LICENSES/Apache-2.0.txt. The original definitions and this proof use GCH
+as an explicit hypothesis, not as a proof axiom.

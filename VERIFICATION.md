@@ -52,3 +52,16 @@ organizer acceptance, prize eligibility decision, external independent checker,
 or priority ruling is asserted. The official replay uses Lean's own kernel.
 Mathlib was not entirely rebuilt from source. The 2015 article in
 `RELATED_WORK.md` has not been read in full, so novelty is not cleared.
+
+## Release preparation checks
+
+The packaged proof at commit
+`82fe055ec3e396a22fbfe4d00dad47cadd1e452f` was additionally checked on
+10 November 2026: two successful 965-job builds (including one with cache
+downloading disabled), direct statement and axiom checks, and official kernel
+replay. The kernel replay exited 0 after 98 seconds. A further 107 package
+checks covered file digests, the original-statement references, manuscript,
+and the catalog-only patch. `verification/packaged-checks.json` records the
+completed proof checks. Subsequent release edits change documentation only;
+the five proof and build inputs retain identical Git blobs. No new fresh
+kernel replay is claimed for the documentation-only release.

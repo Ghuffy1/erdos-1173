@@ -9,6 +9,7 @@ The full license is retained in `LICENSES/Apache-2.0.txt`; the source header
 retains its provenance. Dependencies are fetched from their own repositories
 and remain subject to their respective licenses; they are not vendored here.
 
-This private preparation does not select a public distribution license for the
-authors' original manuscript and proof. No public release or rights transfer is
-effected by preparing it. The authors may choose a license before release.
+The authors' original manuscript and proof are made available for reading and
+verification, with all rights reserved unless otherwise indicated. The
+Apache-2.0 notice applies to the attributed third-party material and does not
+purport to license all original content under Apache-2.0.
