@@ -1,0 +1,40 @@
+Erdos1173.erdos_1173_counterexample : GCH →
+  ∃ f,
+    Erdos1173.IsSetMapping f ∧
+      ∀ (Y : Set.{0} Erdos1173.Domain),
+        Erdos1173.IsFreeSet f Y → Ne.{2} (mk.{0} ↑Y) (aleph.{0} (HAdd.hAdd.{1, 1, 1} omega0.{0} 1))
+Erdos1173.erdos_1173_negative : GCH →
+  ¬∀ (f : Erdos1173.Domain → Set Erdos1173.Domain),
+      Erdos1173.IsSetMapping f → ∃ Y, Erdos1173.IsFreeSet f Y ∧ #↑Y = ℵ_ (ω + 1)
+StatementAudit.original_statement_bridge : StatementAudit.OriginalCounterexample
+def Cardinal.GCH : Prop :=
+∀ (o : Ordinal.{0}), 2 ^ ℵ_ o = ℵ_ (Order.succ o)
+def Erdos1173.IsSetMapping : (Erdos1173.Domain → Set Erdos1173.Domain) → Prop :=
+fun f =>
+  (∀ (α : Erdos1173.Domain), α ∉ f α) ∧
+    (∀ (α : Erdos1173.Domain), #↑(f α) ≤ ℵ_ ω) ∧ ∀ (α β : Erdos1173.Domain), α ≠ β → #↑(f α ∩ f β) < ℵ_ ω
+def Erdos1173.IsFreeSet : (Erdos1173.Domain → Set Erdos1173.Domain) → Set Erdos1173.Domain → Prop :=
+fun f Y => ∀ α ∈ Y, ∀ β ∈ Y, α ≠ β → β ∉ f α
+def StatementAudit.OriginalCounterexample : Prop :=
+(∀ (o : Ordinal.{0}), 2 ^ ℵ_ o = ℵ_ (Order.succ o)) →
+  ∃ f,
+    (∀ (a : (ω_ (ω + 1)).ToType), a ∉ f a) ∧
+      (∀ (a : (ω_ (ω + 1)).ToType), #↑(f a) ≤ ℵ_ ω) ∧
+        (∀ (a b : (ω_ (ω + 1)).ToType), a ≠ b → #↑(f a ∩ f b) < ℵ_ ω) ∧
+          ∀ (Y : Set (ω_ (ω + 1)).ToType), #↑Y = ℵ_ (ω + 1) → ∃ a ∈ Y, ∃ b ∈ Y, a ≠ b ∧ b ∈ f a
+theorem Erdos1173.erdos_1173_counterexample : GCH →
+  ∃ f, Erdos1173.IsSetMapping f ∧ ∀ (Y : Set Erdos1173.Domain), Erdos1173.IsFreeSet f Y → #↑Y ≠ ℵ_ (ω + 1) :=
+fun h =>
+  Exists.intro (Erdos1173.counterexample h)
+    ⟨Erdos1173.counterexample_isSetMapping h, Erdos1173.counterexample_no_large_free_set h⟩
+theorem Erdos1173.erdos_1173_negative : GCH →
+  ¬∀ (f : Erdos1173.Domain → Set Erdos1173.Domain),
+      Erdos1173.IsSetMapping f → ∃ Y, Erdos1173.IsFreeSet f Y ∧ #↑Y = ℵ_ (ω + 1) :=
+fun h hp =>
+  Exists.casesOn (Erdos1173.erdos_1173_counterexample h) fun f h =>
+    And.casesOn h fun hf hn => Exists.casesOn (hp f hf) fun Y h => And.casesOn h fun hYfree hYcard => hn Y hYfree hYcard
+'Erdos1173.counterexample_isSetMapping' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1173.counterexample_no_large_free_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1173.erdos_1173_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1173.erdos_1173_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'StatementAudit.original_statement_bridge' depends on axioms: [propext, Classical.choice, Quot.sound]

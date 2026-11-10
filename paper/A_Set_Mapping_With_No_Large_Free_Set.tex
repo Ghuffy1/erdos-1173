@@ -1,0 +1,252 @@
+\documentclass[10pt,leqno]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage[letterpaper,margin=75pt,includeheadfoot]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\numberwithin{equation}{section}
+\newcommand{\cf}{\operatorname{cf}}
+\newcommand{\cl}{\operatorname{cl}}
+\let\Small\normalsize
+\let\footnotesize\normalsize
+
+\title[A set mapping with small intersections]{A set mapping with small intersections\protect\\ and no large free set}
+\author[W. Howe, G. Huffman, J. Kohlmeyer, and L. Kruer]{Will Howe, Grant Huffman, Jensen Kohlmeyer, and Liam Kruer}
+\thanks{\raggedright Email addresses: \href{mailto:howew@purdue.edu}{\texttt{howew@purdue.edu}} (W.~Howe);
+\href{mailto:huffma97@purdue.edu}{\texttt{huffma97@purdue.edu}} (G.~Huffman);
+\href{mailto:jenwin@purdue.edu}{\texttt{jenwin@purdue.edu}} (J.~Kohlmeyer);
+\href{mailto:kruerl@purdue.edu}{\texttt{kruerl@purdue.edu}} (L.~Kruer).}
+\date{November 10, 2026}
+\hypersetup{
+  pdftitle={A Set Mapping with Small Intersections and No Large Free Set},
+  pdfauthor={Will Howe; Grant Huffman; Jensen Kohlmeyer; Liam Kruer},
+  pdfsubject={A set-mapping counterexample at a successor of a singular cardinal},
+  pdfcreator={Academic manuscript}
+}
+
+\begin{document}
+\begin{abstract}
+Let $\mu$ be an uncountable cardinal of countable cofinality and suppose that
+$2^\mu=\mu^+$. We construct a self-avoiding set mapping on $\mu^+$ whose values
+have cardinality at most $\mu$, whose distinct values have intersection of
+cardinality less than $\mu$, and which has no free set of cardinality $\mu^+$.
+The construction combines a countable neighborhood base with an enumeration
+of the $\mu$-sized subsets and a schedule having fewer than $\mu$ requirements
+at each bounded depth. In particular, under the generalized continuum
+hypothesis, it gives a negative answer to the free-set question of Erd\H{o}s
+and Hajnal at $\aleph_{\omega+1}$.
+\end{abstract}
+\maketitle
+
+\section{Introduction and main result}
+
+Let $S$ be a set. A mapping $F:S\to\mathcal P(S)$ is \emph{self-avoiding} if
+$x\notin F(x)$ for every $x\in S$. A subset $H\subseteq S$ is \emph{free} for $F$ if
+\[
+  x,y\in H,\quad x\ne y\quad\Longrightarrow\quad y\notin F(x).
+\]
+The question considered here asks whether small pairwise intersections of
+the values of a set mapping force a large free set. In the case raised by
+Erd\H{o}s and Hajnal \cite[Problem~35]{EH}, one assumes the generalized
+continuum hypothesis, takes $\mu=\aleph_\omega$ and $\kappa=\mu^+$, and requires
+\[
+  f:\kappa\longrightarrow[\kappa]^{\leq\mu},\qquad
+  |f(\alpha)\cap f(\beta)|<\mu\quad(\alpha\ne\beta).
+\]
+We give a counterexample under the weaker cardinal-arithmetic assumption
+$2^\mu=\mu^+$. Throughout, we work in ZFC, identify cardinals with their
+initial ordinals, and write $[S]^\mu$ for the family of subsets of $S$ of
+cardinality $\mu$.
+
+\begin{theorem}\label{thm:main}
+Let $\mu$ be an uncountable cardinal with $\cf(\mu)=\aleph_0$ and
+$2^\mu=\mu^+$. Put $\kappa=\mu^+$. There is a self-avoiding mapping
+$f:\kappa\to[\kappa]^{\leq\mu}$ such that
+\[
+  |f(\alpha)\cap f(\beta)|<\mu
+  \qquad\text{for all distinct }\alpha,\beta<\kappa,
+\]
+but no subset of $\kappa$ of cardinality $\kappa$ is free for $f$.
+\end{theorem}
+
+The intersection bound is pointwise: the construction does not require a
+single cardinal below $\mu$ to bound all pairwise intersections. This
+distinction is essential at a singular cardinal.
+
+The use of values concentrated near their indexing points is motivated by
+Hechler's construction discussed in \cite[p.~279]{EH}. All ingredients
+needed for the construction below are proved here.
+
+\section{Proof of the main theorem}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix an increasing sequence $\langle\mu_n:n<\omega\rangle$ of infinite
+cardinals below $\mu$ with supremum $\mu$. Put $\kappa=\mu^+$.
+
+\subsection{The sequence space and its enumerations}
+Let $X=\mu^\omega$, with the product topology obtained by giving $\mu$ the
+discrete topology. For $x\in X$ and $n<\omega$, define
+\begin{equation}\label{eq:neighborhoods}
+ U_n(x)=\{y\in X:y\mathbin{\upharpoonright}n=x\mathbin{\upharpoonright}n\}.
+\end{equation}
+These sets form a decreasing neighborhood base at $x$. All closures below
+are taken in $X$. If $x\ne y$, then $U_N(x)$ and $U_N(y)$ are disjoint for
+some finite $N$. The collection $\mathcal B$ of all finite-prefix cylinders
+is a base of cardinality $\mu$, since there are $\mu$ finite sequences from
+an infinite alphabet of size $\mu$.
+
+We first verify that $|X|=\kappa$. If $|X|\leq\mu$, list its points as
+$\langle z_\xi:\xi<\mu\rangle$, allowing repetitions. For each $n$, choose
+\[
+ z(n)\in\mu\setminus\{z_\xi(n):\xi<\mu_n\}.
+\]
+This choice is possible because $\mu_n<\mu$. For every $\xi<\mu$, some $n$
+satisfies $\xi<\mu_n$, and then $z(n)\ne z_\xi(n)$. Thus $z$ is absent from
+the list, a contradiction. On the other hand,
+\begin{equation}\label{eq:cardX}
+ |X|=\mu^{\aleph_0}\leq(2^\mu)^{\aleph_0}
+      =2^{\mu\cdot\aleph_0}=2^\mu=\kappa.
+\end{equation}
+Since $\kappa$ is the successor of $\mu$, these inequalities give
+$|X|=\kappa$. Fix a bijective enumeration
+$X=\{x_\alpha:\alpha<\kappa\}$.
+
+The family $[X]^\mu$ also has cardinality $\kappa$. Indeed,
+\begin{equation}\label{eq:cardFamily}
+ |[X]^\mu|\leq\kappa^\mu=(2^\mu)^\mu
+             =2^{\mu\cdot\mu}=2^\mu=\kappa.
+\end{equation}
+For the reverse inequality, fix $B\in[X]^\mu$. The sets $B\cup\{x\}$, for
+$x\in X\setminus B$, are $\kappa$ distinct members of $[X]^\mu$. We may
+therefore enumerate this family as $\langle A_\xi:\xi<\kappa\rangle$.
+
+\subsection{Scheduling the requirements}
+For each $\alpha<\kappa$, choose an injection $h_\alpha:\alpha\to\mu$;
+this is possible because $|\alpha|\leq\mu$. For $\xi<\alpha$, put
+\begin{equation}\label{eq:depth}
+ d_\alpha(\xi)=\min\{n<\omega:h_\alpha(\xi)<\mu_n\}.
+\end{equation}
+For every finite $N$, injectivity of $h_\alpha$ and monotonicity of the
+sequence $\langle\mu_n\rangle$ give
+\begin{equation}\label{eq:shallow}
+ |\{\xi<\alpha:d_\alpha(\xi)<N\}|\leq\mu_N<\mu.
+\end{equation}
+In fact, $d_\alpha(\xi)<N$ implies $h_\alpha(\xi)<\mu_N$. For $N=0$ the
+set on the left is empty.
+
+\subsection{The set mapping}
+For each $\alpha<\kappa$, consider the indices
+\[
+ I_\alpha=\{\xi<\alpha:x_\alpha\in
+             \overline{A_\xi\setminus\{x_\alpha\}}\}.
+\]
+For every $\xi\in I_\alpha$, choose a point
+\[
+ y_{\alpha,\xi}\in(A_\xi\setminus\{x_\alpha\})
+                    \cap U_{d_\alpha(\xi)}(x_\alpha).
+\]
+The defining closure condition makes this intersection nonempty. Define
+\begin{equation}\label{eq:mapping}
+ F(x_\alpha)=\{y_{\alpha,\xi}:\xi\in I_\alpha\}.
+\end{equation}
+Every chosen point differs from $x_\alpha$, so $x_\alpha\notin F(x_\alpha)$.
+Moreover,
+$|F(x_\alpha)|\leq|I_\alpha|\leq|\alpha|\leq\mu$.
+By \eqref{eq:shallow}, for every $\alpha<\kappa$ and every finite $N$,
+\begin{equation}\label{eq:exceptions}
+ |F(x_\alpha)\setminus U_N(x_\alpha)|\leq\mu_N<\mu.
+\end{equation}
+Indeed, if $d_\alpha(\xi)\geq N$, then the selected point belongs to
+$U_N(x_\alpha)$. Only indices of depth less than $N$ can contribute points
+outside that neighborhood. Repeated choices do not increase their number.
+
+\subsection{Pairwise intersections}
+Let $\alpha\ne\beta$. Choose a finite $N$ such that
+$U_N(x_\alpha)\cap U_N(x_\beta)=\varnothing$. Every common point of the two
+values of $F$ lies outside at least one of these neighborhoods. Hence
+\[
+\begin{split}
+ F(x_\alpha)\cap F(x_\beta)\subseteq{}&
+   \bigl(F(x_\alpha)\setminus U_N(x_\alpha)\bigr)\\
+   &\mathbin{\cup}\bigl(F(x_\beta)\setminus U_N(x_\beta)\bigr).
+\end{split}
+\]
+Applying \eqref{eq:exceptions}, and using that $\mu_N$ is infinite, we obtain
+\begin{equation}\label{eq:intersections}
+ |F(x_\alpha)\cap F(x_\beta)|
+        \leq\mu_N+\mu_N=\mu_N<\mu.
+\end{equation}
+Only two exceptional sets are combined here. No estimate for a countable
+union of sets of size less than the singular cardinal $\mu$ is used. The
+depth $N$ may depend on the pair $\alpha,\beta$.
+
+\subsection{No large free set}
+Let $H\subseteq X$ have cardinality $\kappa$. For each basic open set
+$B\in\mathcal B$ that meets $H$, choose one point of $B\cap H$, and let $D$
+be the set of chosen points. Then $D\subseteq H$, $|D|\leq\mu$, and
+$H\subseteq\cl(D)$. Indeed, every basic neighborhood of a point of $H$
+contains one of the chosen representatives.
+
+Enlarge $D$ inside $H$ to a set $A$ of cardinality exactly $\mu$. Then
+$H\subseteq\cl(A)$. Write $A=A_\xi$. Since both $A$ and
+$\{x_\alpha:\alpha\leq\xi\}$ have cardinality at most $\mu$, their union
+cannot exhaust $H$. Choose
+\[
+ x_\alpha\in H\setminus A\qquad\text{with}\qquad\alpha>\xi.
+\]
+Because $x_\alpha\notin A$ and $x_\alpha\in\cl(A)$, we have
+\[
+ x_\alpha\in\overline{A_\xi\setminus\{x_\alpha\}}.
+\]
+Thus $\xi\in I_\alpha$, and the construction selected a point
+\[
+ y_{\alpha,\xi}\in F(x_\alpha)\cap A\subseteq F(x_\alpha)\cap H.
+\]
+This point is distinct from $x_\alpha$. Hence $H$ is not free for $F$.
+Since $H$ was arbitrary, $F$ has no free subset of cardinality $\kappa$.
+
+\subsection{Transfer to the ordinal domain}
+Use the fixed bijection $\alpha\mapsto x_\alpha$ to define
+\begin{equation}\label{eq:transport}
+ f(\alpha)=\{\beta<\kappa:x_\beta\in F(x_\alpha)\}.
+\end{equation}
+The bijection preserves self-avoidance, the cardinalities of values and
+their intersections, and freeness. Therefore $f$ has all the asserted
+properties.\qedhere
+\end{proof}
+
+\section{The Erd\H{o}s--Hajnal question}
+
+\begin{corollary}\label{cor:GCH}
+Assume the generalized continuum hypothesis, and put $\mu=\aleph_\omega$
+and $\kappa=\aleph_{\omega+1}$. There is a self-avoiding mapping
+$f:\kappa\to[\kappa]^{\leq\mu}$ whose distinct values have intersection of
+cardinality less than $\mu$, but which has no free set of cardinality $\kappa$.
+\end{corollary}
+
+\begin{proof}
+Take $\mu=\aleph_\omega$. This cardinal has cofinality $\aleph_0$, and GCH
+gives $2^\mu=\mu^+=\aleph_{\omega+1}$. Theorem~\ref{thm:main} applies.\qedhere
+\end{proof}
+
+Identifying $\aleph_{\omega+1}$ with its initial ordinal
+$\omega_{\omega+1}$ gives exactly the domain in the Erd\H{o}s--Hajnal
+question. Thus the stated pointwise intersection condition does not force
+a free set of the required size.
+
+\subsection*{Acknowledgments}
+The authors acknowledge the assistance of OpenAI's ChatGPT in developing
+the construction and in preparing and checking the mathematical exposition.
+
+\begin{thebibliography}{1}
+\bibitem{EH} P.~Erd\H{o}s and A.~Hajnal,
+\emph{Unsolved and solved problems in set theory},
+in \emph{Proceedings of the Tarski Symposium},
+Proceedings of Symposia in Pure Mathematics \textbf{25},
+American Mathematical Society, Providence, RI, 1974, pp.~269--287.
+\end{thebibliography}
+\end{document}
