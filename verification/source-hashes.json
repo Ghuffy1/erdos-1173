@@ -1,7 +1,7 @@
 {
   "audited_private_commit": "e8c481bba7f41f0fa5b846e78807b3bf6db881ff",
   "source_files_equal_to_audited_commit": true,
-  "sha256": {
+  "prepared_windows_file_sha256": {
     "Erdos1173.lean": "a8a114957459f6bed43bde4ec02bee1e42e40b1d98ca88f7d7ccb2f03ef2672a",
     "StatementAudit.lean": "0cac5fc7285a8fcd6616b13de9b058a9bb61431a0ffb3634292642b34c93ca42",
     "lakefile.toml": "314717e265e0510df15f056061f23b5570da0b04ce24a8369f6d4d93621401c0",
@@ -9,5 +9,13 @@
     "lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
     "paper/A_Set_Mapping_With_No_Large_Free_Set.pdf": "71ead3d8872ce9ae17fd2a79719211b93f9bee927b5142267ac9427b25ee2c66",
     "paper/A_Set_Mapping_With_No_Large_Free_Set.tex": "01731a652abb5390f73f10cc38808ad2fc98f749869c1d8986a88c3583ab46ca"
-  }
+  },
+  "git_blob_sha256": {
+    "Erdos1173.lean": "a8a114957459f6bed43bde4ec02bee1e42e40b1d98ca88f7d7ccb2f03ef2672a",
+    "StatementAudit.lean": "0cac5fc7285a8fcd6616b13de9b058a9bb61431a0ffb3634292642b34c93ca42",
+    "lakefile.toml": "314717e265e0510df15f056061f23b5570da0b04ce24a8369f6d4d93621401c0",
+    "lake-manifest.json": "35954055fd92056e7768db5635cc15d673f6fe0a623f8bff832ffbb5dde914d4",
+    "lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b"
+  },
+  "line_ending_note": "Git stores canonical text blobs with LF; prepared Windows source files may use CRLF. Both byte-level digest sets are recorded explicitly. The original and packaged Git source blobs match exactly, and the original Windows and packaged Windows proof inputs also match exactly."
 }
